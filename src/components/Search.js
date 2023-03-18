@@ -1,7 +1,12 @@
 import React from "react";
+import "../style/Search.css";
 
 function Search() {
-  return <input placeholder="Introduce one task..."/>;
+  return (
+    <section>
+      <input className="Search" placeholder="Introduce one task..." />
+    </section>
+  );
 }
 
 export { Search };

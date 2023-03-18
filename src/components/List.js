@@ -1,9 +1,10 @@
 import React from "react";
+import "../style/List.css";
 
 function List(props) {
   return (
     <section>
-        {props.children}
+      <ul>{props.children}</ul>
     </section>
   );
 }
