@@ -9,6 +9,7 @@ const tasks = [
   { text: "Task 1", completed: false },
   { text: "Task 2", completed: true },
   { text: "Task 3", completed: false },
+  { text: "Task 4", completed: false },
 ];
 
 function App() {
