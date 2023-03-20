@@ -1,8 +1,7 @@
 import React from "react";
 import "../style/Search.css";
 
-function Search() {
-  const [search, setSearch] = React.useState("");
+function Search({search, setSearch}) {
   const onSearchChange = (event) => {
     setSearch(event.target.value);
   };
