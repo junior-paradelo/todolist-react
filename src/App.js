@@ -29,13 +29,33 @@ function App() {
     });
   }
 
+  const completeTask = (text) => {
+    const taskIndex = tasks.findIndex((task) => task.text === text);
+    const newTasks = [...tasks];
+    newTasks[taskIndex].completed = true;
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (text) => {
+    const taskIndex = tasks.findIndex((task) => task.text === text);
+    const newTasks = [...tasks];
+    newTasks.splice(taskIndex, 1);
+    setTasks(newTasks);
+  };
+
   return (
     <React.Fragment>
       <Counter total={totalTasks} completed={completedTasks} />
       <Search search={search} setSearch={setSearch} />
       <List>
         {searchedTasks.map((task) => (
-          <Item key={task.text} text={task.text} completed={task.completed} />
+          <Item
+            key={task.text}
+            text={task.text}
+            completed={task.completed}
+            onComplete={() => completeTask(task.text)}
+            onDelete={() => deleteTask(task.text)}
+          />
         ))}
       </List>
       <CreateButton />
